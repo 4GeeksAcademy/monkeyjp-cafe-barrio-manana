@@ -1,11 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Menu
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menú — Café Barrio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Café Barrio",
+      "description": "Cafetería local que ofrece café, té y comida ligera.",
+      "servesCuisine": "Cafetería",
+      "menu": "menu.html",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "ES"
+      }
+    }
+    </script>
+  </head>
+  <body class="flex min-h-screen flex-col bg-[#FAF7F2] font-[Arial] text-[#30241D]">
+    <a
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-10 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-[#30241D] focus:ring-2 focus:ring-[#63452F]"
+      href="#contenido"
+    >
+      Cambiar al contenido principal
+    </a>
+
+    <header class="border-b border-[#A6AD89]">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-4">
+        <a
+          class="font-[Georgia] text-2xl font-bold text-[#63452F] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#63452F]"
+          href="index.html"
+        >
+          Café Barrio
+        </a>
+        <nav aria-label="Navegación principal">
+          <ul class="flex flex-wrap gap-x-5 gap-y-2 text-base">
+            <li>
+              <a class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#63452F]" href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#63452F]" href="menu.html">Menú</a>
+            </li>
+            <li>
+              <a class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#63452F]" href="order.html">Pedido</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="mx-auto w-full max-w-6xl flex-1 px-4 py-12 md:py-16">
+
+      <!-- Título y presentación -->
+      <section class="mb-10 text-center">
+        <h1 class="font-[Georgia] text-4xl font-bold text-[#63452F] md:text-5xl">Nuestro Menú</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#30241D]">
+          En Café Barrio preparamos cada bebida y cada plato con los mejores ingredientes.
+          Desde un espresso intenso hasta un té reconfortante o un bocado ligero,
+          todo está hecho para acompañarte en tu día a día.
+        </p>
+      </section>
+
+      <!-- Filtros visuales -->
+      <section aria-label="Filtros por categoría" class="mb-10">
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="inline-block rounded-md bg-[#63452F] px-6 py-2 font-[Georgia] text-base text-white">
+            Café
+          </span>
+          <span class="inline-block rounded-md border border-[#63452F] bg-white px-6 py-2 font-[Georgia] text-base text-[#30241D]">
+            Té
+          </span>
+          <span class="inline-block rounded-md border border-[#63452F] bg-white px-6 py-2 font-[Georgia] text-base text-[#30241D]">
+            Comida
+          </span>
+        </div>
+      </section>
+
+      <!-- Café -->
+      <section aria-labelledby="cafe-heading" class="mb-12">
+        <h2 id="cafe-heading" class="mb-6 font-[Georgia] text-2xl text-[#63452F] md:text-3xl">Café</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=Espresso&font=raleway"
+              alt="Taza de espresso"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Espresso</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">2.50</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=Cappuccino&font=raleway"
+              alt="Taza de cappuccino"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Cappuccino</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">3.20</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=Latte&font=raleway"
+              alt="Vaso de latte con leche"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Latte</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">3.50</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=Mocha&font=raleway"
+              alt="Taza de mocha con chocolate"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Mocha</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">3.80</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Té -->
+      <section aria-labelledby="te-heading" class="mb-12">
+        <h2 id="te-heading" class="mb-6 font-[Georgia] text-2xl text-[#63452F] md:text-3xl">Té</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=T%C3%A9+Verde&font=raleway"
+              alt="Taza de té verde"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Té Verde</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">2.80</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=T%C3%A9+Negro&font=raleway"
+              alt="Taza de té negro"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Té Negro</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">2.80</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Comida -->
+      <section aria-labelledby="comida-heading" class="mb-12">
+        <h2 id="comida-heading" class="mb-6 font-[Georgia] text-2xl text-[#63452F] md:text-3xl">Comida</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=Croissant&font=raleway"
+              alt="Croissant recién horneado"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Croissant</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">2.50</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-xl border border-[#e5e0d8] bg-white" itemscope itemtype="https://schema.org/MenuItem">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://placehold.co/400x300/FAF7F2/63452F?text=Sandwich&font=raleway"
+              alt="Sándwich mixto"
+              itemprop="image"
+              loading="lazy"
+            >
+            <div class="flex flex-1 flex-col justify-between p-4">
+              <h3 class="font-[Georgia] text-lg font-semibold text-[#30241D]" itemprop="name">Sándwich Mixto</h3>
+              <p class="mt-2 text-[#63452F]" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="text-xl font-bold" itemprop="price">5.50</span>
+                <span itemprop="priceCurrency" content="EUR">€</span>
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-[#63452F] text-[#FAF7F2]">
+      <div class="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:grid-cols-2">
+        <div>
+          <h2 class="mb-2 font-[Georgia] text-xl">Visítanos</h2>
+          <address class="not-italic">
+            <p>Dirección por definir</p>
+            <p class="mt-1"><span class="font-semibold">Horario:</span> por definir</p>
+          </address>
+        </div>
+        <div class="sm:text-right">
+          <a
+            class="inline-block rounded-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FAF7F2]"
+            href="order.html"
+          >
+            Hacer un pedido
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
